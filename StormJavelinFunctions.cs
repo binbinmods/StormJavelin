@@ -9,6 +9,7 @@ using static UnityEngine.Mathf;
 using UnityEngine.TextCore.LowLevel;
 using static StormJavelin.Plugin;
 using System.Collections.ObjectModel;
+using static StormJavelin.CustomFunctions;
 using UnityEngine;
 
 namespace StormJavelin
@@ -76,7 +77,7 @@ namespace StormJavelin
 
         public static string GetStormJavelinUpgraded(string seed = "", int randInt = 0)
         {
-            string cardName = "vitalizingserenadespecial";
+            string cardName = "vitalizingJavelinspecial";
             UnityEngine.Random.InitState(seed.GetDeterministicHashCode());
 
             randInt = randInt == 0 ? UnityEngine.Random.Range(0, 100) : randInt;
@@ -93,6 +94,26 @@ namespace StormJavelin
                 cardName += "b";
             }
             return cardName;
+
+        }
+
+        public static int GetStormJavelinCount(Character character)
+        {
+            if (!IsLivingHero(character))
+            {
+                return 0;
+            }
+            int count = 0;
+            int charInd = character.HeroIndex;
+            List<string> cards = MatchManager.Instance.GetHeroDeck(charInd);
+            foreach (string card in cards)
+            {
+                if (card.StartsWith("stormjavelin"))
+                {
+                    count++;
+                }
+            }
+            return count;
 
         }
 

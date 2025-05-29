@@ -44,9 +44,9 @@ namespace StormJavelin
 
         public static ConfigEntry<bool> EnableMod { get; set; }
         public static ConfigEntry<bool> EnableDebugging { get; set; }
-        public static ConfigEntry<bool> EnableRandomSerenades { get; set; }
+        public static ConfigEntry<bool> EnableRandomJavelins { get; set; }
         // public static ConfigEntry<bool> EnableIncreasedRods { get; set; }
-        public static ConfigEntry<bool> EnableBonusSerenades { get; set; }
+        public static ConfigEntry<bool> EnableBonusJavelins { get; set; }
         public static ConfigEntry<bool> ChangeAllNames { get; set; }
 
         internal int ModDate = int.Parse(DateTime.Today.ToString("yyyyMMdd"));
@@ -66,9 +66,9 @@ namespace StormJavelin
             // Sets the title, default values, and descriptions
             EnableMod = Config.Bind(new ConfigDefinition("StormJavelin", "EnableMod"), true, new ConfigDescription("Enables the mod. If false, the mod will not work then next time you load the game."));
             EnableDebugging = Config.Bind(new ConfigDefinition("StormJavelin", "EnableDebugging"), true, new ConfigDescription("Enables the debugging"));
-            EnableRandomSerenades = Config.Bind(new ConfigDefinition("StormJavelin", "Random Serenades"), true, new ConfigDescription("Storm Javelin is now a card reward for all."));
+            EnableRandomJavelins = Config.Bind(new ConfigDefinition("StormJavelin", "Random Javelins"), true, new ConfigDescription("Storm Javelin is now a card reward for all."));
             ChangeAllNames = Config.Bind(new ConfigDefinition("StormJavelin", "ChangeAllNames"), true, new ConfigDescription("Makes it so that all cards are named Storm Javelin. Restart the game upon changing this."));
-            EnableBonusSerenades = Config.Bind(new ConfigDefinition("StormJavelin", "Bonus Serenades"), true, new ConfigDescription("Chace to shuffle Serenades into your deck each turn."));
+            EnableBonusJavelins = Config.Bind(new ConfigDefinition("StormJavelin", "Bonus Javelins"), true, new ConfigDescription("Chace to shuffle Javelins into your deck each turn."));
 
 
             // DevMode = Config.Bind(new ConfigDefinition("StormJavelin", "DevMode"), false, new ConfigDescription("Enables all of the things for testing."));
@@ -85,10 +85,22 @@ namespace StormJavelin
                 _contentFolder: "StormJavelin"
             );
 
+            // ring of sparks - DONE
+            // sacred sparks - done
+            // rods from god - done
+            // thunder shield - TBD
+            // crackling gauntlet 
+            // electric armor
+            // storm necklace
 
-            string text = $"{medsSpriteText("sharp")} on heroes increases {medsSpriteText("lightning")} damage by 1 per charge";
+
+            string text = $"{medsSpriteText("sharp")} on heroes increases {medsSpriteText("lightning")} damage by 2% per charge";
             string cardId = "javringofsparks";
-            AddTextToCardDescription(text, TextLocation.End, cardId, includeRare: true);
+            AddTextToCardDescription(text, TextLocation.End, cardId, includeRare: false);
+
+            text = $"{medsSpriteText("sharp")} on heroes increases {medsSpriteText("lightning")} damage by 4% per charge";
+            cardId = "javringofsparksrare";
+            AddTextToCardDescription(text, TextLocation.End, cardId, includeRare: false);
 
             text = $"{medsSpriteText("spark")} on monsters heals heroes by 1 when attacked";
             cardId = "javsacredsparks";
@@ -111,9 +123,14 @@ namespace StormJavelin
             AddTextToCardDescription(text, TextLocation.End, cardId, includeRare: false);
 
 
-            text = $"{medsSpriteText("powerful")} on heroes have +1 Max. charge for each card in their Draw Pile";
+            text = $"{medsSpriteText("powerful")} on heroes have -15 Max. charges and +1 Max. charge for each card in their Draw Pile";
             cardId = "javcracklinggauntlet";
-            AddTextToCardDescription(text, TextLocation.End, cardId, includeRare: true);
+            AddTextToCardDescription(text, TextLocation.End, cardId, includeRare: false);
+
+
+            text = $"{medsSpriteText("powerful")} on heroes have -10 Max. charges and +1 Max. charge for each card in their Draw Pile";
+            cardId = "javcracklinggauntletrare";
+            AddTextToCardDescription(text, TextLocation.End, cardId, includeRare: false);
             // apply patches, this functionally runs all the code for Harmony, running your mod
             if (EnableMod.Value) { harmony.PatchAll(); }
         }

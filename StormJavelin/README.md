@@ -4,16 +4,16 @@ This mod makes Storm Javelin more prominant, and potentially better.
 
 If you have any suggestions for things you would like to see, let me know!
 
-Additionally, if you run into a bug where the game freezes on card rewards, set "EnableRandomSerenades" to be false. That should fix the issue.
+Additionally, if you run into a bug where the game freezes on card rewards, set "EnableRandomJavelins" to be false. That should fix the issue.
 
 This has not been tested in multiplayer yet, so let me know if there are any issues! Note: there are likely to be a good number of them.
 
-| Config                | Default | Explanation                                                                                 |
-| :-------------------- | :-----: | :------------------------------------------------------------------------------------------ |
-| EnableMod             |  true   | Enables the mod. If false, the mod will not work then next time you load the game.          |
-| EnableDebugging       |  true   | Enables debugging for if errors occur. Please enable this before submitting a LogOutput.log |
-| EnableRandomSerenades |  true   | Gives you Storm Javelins as card rewards.                                                   |
-| EnableBonusSerenades  |  true   | Randomly shuffles Storm Javelins into your deck.                                            |
+| Config               | Default | Explanation                                                                                 |
+| :------------------- | :-----: | :------------------------------------------------------------------------------------------ |
+| EnableMod            |  true   | Enables the mod. If false, the mod will not work then next time you load the game.          |
+| EnableDebugging      |  true   | Enables debugging for if errors occur. Please enable this before submitting a LogOutput.log |
+| EnableRandomJavelins |  true   | Gives you Storm Javelins as card rewards.                                                   |
+| EnableBonusJavelins  |  true   | Randomly shuffles Storm Javelins into your deck.                                            |
 
 ## Installation (manual)
 

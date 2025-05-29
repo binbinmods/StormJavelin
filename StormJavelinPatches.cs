@@ -45,7 +45,7 @@ namespace StormJavelin
                 return;
             }
             int serenadeChance = 10;
-            bool addSerenade = EnableBonusSerenades.Value && MatchManager.Instance.GetRandomIntRange(0, 100) < serenadeChance;
+            bool addSerenade = EnableBonusJavelins.Value && MatchManager.Instance.GetRandomIntRange(0, 100) < serenadeChance;
             if (addSerenade && theEvent == Enums.EventActivation.BeginRound)
             {
                 Character hero = __instance;
@@ -114,12 +114,33 @@ namespace StormJavelin
                     string traitOfInterest2 = "javringofsparksrare";
                     if (IfCharacterHas(characterOfInterest, CharacterHas.Item, traitOfInterest2, AppliesTo.Heroes))
                     {
-                        __result = AtOManager.Instance.GlobalAuraCurseModifyDamage(__result, Enums.DamageType.Lightning, 0, 1, 0);
+                        __result = AtOManager.Instance.GlobalAuraCurseModifyDamage(__result, Enums.DamageType.Lightning, 0, 0, 4);
                     }
                     else if (IfCharacterHas(characterOfInterest, CharacterHas.Item, itemOfInterest, AppliesTo.Heroes))
                     {
-                        __result = AtOManager.Instance.GlobalAuraCurseModifyDamage(__result, Enums.DamageType.Lightning, 0, 1, 0);
+                        __result = AtOManager.Instance.GlobalAuraCurseModifyDamage(__result, Enums.DamageType.Lightning, 0, 0, 2);
+                    }
+                    break;
+                case "powerful":
+                    itemOfInterest = "javcracklinggauntlet";
 
+                    if (IfCharacterHas(characterOfInterest, CharacterHas.Item, itemOfInterest + "rare", AppliesTo.ThisHero))
+                    {
+                        int charInd = characterOfInterest.HeroIndex;
+                        List<string> cards = MatchManager.Instance.GetHeroDeck(charInd);
+                        int drawPileCount = cards.Count;
+                        int bonusPowerful = -15 + drawPileCount;
+                        __result.MaxCharges = Mathf.Max(2, __result.MaxCharges + bonusPowerful);
+                        __result.MaxMadnessCharges = Mathf.Max(2, __result.MaxMadnessCharges + bonusPowerful);
+                    }
+                    else if (IfCharacterHas(characterOfInterest, CharacterHas.Item, itemOfInterest, AppliesTo.Heroes))
+                    {
+                        int charInd = characterOfInterest.HeroIndex;
+                        List<string> cards = MatchManager.Instance.GetHeroDeck(charInd);
+                        int drawPileCount = cards.Count;
+                        int bonusPowerful = -10 + drawPileCount;
+                        __result.MaxCharges = Mathf.Max(2, __result.MaxCharges + bonusPowerful);
+                        __result.MaxMadnessCharges = Mathf.Max(2, __result.MaxMadnessCharges + bonusPowerful);
                     }
                     break;
                 case "spark":
@@ -129,34 +150,40 @@ namespace StormJavelin
                         __result.MaxMadnessCharges += 100;
 
                     }
+                    itemOfInterest = "javelectricarmorrare";
+                    if (IfCharacterHas(characterOfInterest, CharacterHas.Item, itemOfInterest, AppliesTo.Monsters))
+                    {
+                        __result.MaxMadnessCharges += 100;
+
+                    }
                     itemOfInterest = "javsacredsparks";
-                    if (IfCharacterHas(characterOfInterest, CharacterHas.Item, itemOfInterest, AppliesTo.Heroes))
+                    if (IfCharacterHas(characterOfInterest, CharacterHas.Item, itemOfInterest + "rare", AppliesTo.Heroes))
                     {
                         __result.HealAttackerConsumeCharges = 1;
                         __result.HealAttackerPerStack = 1;
                     }
-                    else if (IfCharacterHas(characterOfInterest, CharacterHas.Item, itemOfInterest + "rare", AppliesTo.Heroes))
+                    else if (IfCharacterHas(characterOfInterest, CharacterHas.Item, itemOfInterest, AppliesTo.Heroes))
                     {
                         __result.HealAttackerConsumeCharges = 1;
                         __result.HealAttackerPerStack = 1;
+                    }
+
+                    itemOfInterest = "javsacredsparks";
+                    if (IfCharacterHas(characterOfInterest, CharacterHas.Item, itemOfInterest + "rare", AppliesTo.Heroes))
+                    {
+                        __result.ResistModified2 = Enums.DamageType.Piercing;
+                        __result.ResistModifiedPercentagePerStack2 = -0.5f;
+                    }
+                    else if (IfCharacterHas(characterOfInterest, CharacterHas.Item, itemOfInterest, AppliesTo.Heroes))
+                    {
+                        __result.ResistModified2 = Enums.DamageType.Piercing;
+                        __result.ResistModifiedPercentagePerStack2 = -1.0f;
                     }
                     break;
 
 
             }
         }
-
-        // [HarmonyPostfix]
-        // [HarmonyPatch(typeof(CardData), nameof(CardData.Init))]
-
-        // public static void InitPostfix(ref string ___cardName, string newId)
-        // {
-        //     if (ChangeAllNames.Value)
-        //     {
-        //         ___cardName = "Storm Javelin";
-
-        //     }
-        // }
 
         [HarmonyPostfix]
         [HarmonyPatch(typeof(CardItem), nameof(CardItem.SetCard))]
@@ -182,7 +209,6 @@ namespace StormJavelin
                 // ___titleTextTGold.text = "Storm Javelin";
                 // ___titleTextTRed.text = "Storm Javelin";
                 // ___titleTextTPurple.text = "Storm Javelin";
-
             }
 
         }
@@ -198,17 +224,48 @@ namespace StormJavelin
             }
 
             CardData cardData = Globals.Instance.GetCardData(cardId, false);
-            bool isStormJavelin = cardData?.Id?.StartsWith("vitalizingserenade") ?? false;
+            bool isStormJavelin = cardData?.Id?.StartsWith("stormjavelin") ?? false;
             if (isStormJavelin && __instance.craftType == 1)
             {
-                LogDebug("Preventing vitalizingSerenade from being removed");
+                LogDebug("Preventing stormjavelin from being removed");
                 ___BG_Remove.Disable();
                 return;
             }
             return;
         }
 
+        [HarmonyPostfix]
+        [HarmonyPatch(typeof(Character), nameof(Character.DamageBonus))]
 
+        public static void DamageBonus(Character __instance, ref float[] __result, Enums.DamageType DT, int energyCost = 0)
+        {
+            if (!IsLivingHero(__instance))
+            {
+                return;
+            }
+            if (DT != Enums.DamageType.Lightning && DT != Enums.DamageType.Piercing)
+            {
+                return;
+            }
+            float bonusPercent = 0f;
+            if (__instance.HaveItem("javthundershield"))
+            {
+                bonusPercent = 5f;
+            }
+            if (__instance.HaveItem("javthundershieldrare"))
+            {
+                bonusPercent = 10f;
+            }
+            if (bonusPercent == 0f)
+            {
+                return;
+            }
+            int stormJavelinCount = GetStormJavelinCount(__instance);
+            float damageBonus = bonusPercent * stormJavelinCount;
+            LogDebug($"Bonus Damage from ThunderShield {__instance.SourceName} {DT} {energyCost} {damageBonus}");
+            __result[1] += damageBonus;
+
+        }
 
 
 
@@ -217,7 +274,7 @@ namespace StormJavelin
         public static void GetCardByRarityPostfix(ref string __result, int rarity, CardData _cardData, bool isChallenge = false)
         {
 
-            if (!EnableRandomSerenades.Value)
+            if (!EnableRandomJavelins.Value)
             {
                 return;
             }
@@ -245,17 +302,10 @@ namespace StormJavelin
             LogDebug("SetInitialCardsPostfix");
             // UnityEngine.Random.InitState((AtOManager.Instance.GetGameId() + __instance.SourceName + PluginInfo.PLUGIN_GUID).GetDeterministicHashCode());
             List<string> cards = __instance?.Cards;
-            cards?.Add("vitalizingserenadespecialb");
-            cards?.Add("vitalizingserenadespecialb");
+            cards?.Add("stormjavelin");
+            cards?.Add("stormjavelin");
             __instance.Cards = cards;
         }
-
-
-
-
-
-
-
 
     }
 }
