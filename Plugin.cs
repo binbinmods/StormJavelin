@@ -90,30 +90,30 @@ namespace StormJavelin
             string cardId = "javringofsparks";
             AddTextToCardDescription(text, TextLocation.End, cardId, includeRare: true);
 
-            text = $"{medsSpriteText("spark")} on monsteres heals heroes by 1 when attacked";
+            text = $"{medsSpriteText("spark")} on monsters heals heroes by 1 when attacked";
             cardId = "javsacredsparks";
             AddTextToCardDescription(text, TextLocation.End, cardId, includeRare: true);
 
-            text = $"{medsSpriteText("spark")} on monsteres reduces {medsSpriteText("piercing")} resistance by 0.5% per charge";
-            cardId = "";
+            text = $"{medsSpriteText("spark")} on monsters reduces {medsSpriteText("piercing")} resistance by 0.5% per charge";
+            cardId = "javrodsfromgod";
             AddTextToCardDescription(text, TextLocation.End, cardId, includeRare: false);
 
-            text = $"{medsSpriteText("spark")} on monsteres reduces {medsSpriteText("piercing")} resistance by 1% per charge";
-            cardId = "";
+            text = $"{medsSpriteText("spark")} on monsters reduces {medsSpriteText("piercing")} resistance by 1% per charge";
+            cardId = "javrodsfromgodrare";
             AddTextToCardDescription(text, TextLocation.End, cardId, includeRare: false);
 
             text = $"+5% All Damage and Healing Done for each Storm Javelin in your Draw Pile";
-            cardId = "";
+            cardId = "javthundershield";
             AddTextToCardDescription(text, TextLocation.ItemBeginning, cardId, includeRare: false);
 
             text = $"+10% All Damage and Healing Done for each Storm Javelin in your Draw Pile";
-            cardId = "";
+            cardId = "javthundershieldrare";
             AddTextToCardDescription(text, TextLocation.End, cardId, includeRare: false);
 
 
             text = $"{medsSpriteText("powerful")} on heroes have +1 Max. charge for each card in their Draw Pile";
-            cardId = "";
-            AddTextToCardDescription(text, TextLocation.End, cardId, includeRare: false);
+            cardId = "javcracklinggauntlet";
+            AddTextToCardDescription(text, TextLocation.End, cardId, includeRare: true);
             // apply patches, this functionally runs all the code for Harmony, running your mod
             if (EnableMod.Value) { harmony.PatchAll(); }
         }
