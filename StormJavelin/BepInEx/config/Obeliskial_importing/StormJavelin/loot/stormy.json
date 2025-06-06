@@ -6,9 +6,13 @@
     "GoldQuantity": 0,
     "ID": "stormy",
     "LootItemTable": [
-        "{\n    \"LootCard\": \"stormy\",\n    \"LootPercent\": 100.0,\n    \"LootRarity\": \"Common\",\n    \"LootType\": \"None\"\n}"
+        "{\n    \"LootCard\": \"stormy\",\n    \"LootPercent\": 100.0,\n    \"LootRarity\": \"Common\",\n    \"LootType\": \"None\"\n}",
+        "{\n    \"LootCard\": \"tridentprong\",\n    \"LootPercent\": 100.0,\n    \"LootRarity\": \"Common\",\n    \"LootType\": \"None\"\n}",
+        "{\n    \"LootCard\": \"javthundershield2\",\n    \"LootPercent\": 100.0,\n    \"LootRarity\": \"Common\",\n    \"LootType\": \"None\"\n}",
+        "{\n    \"LootCard\": \"javringofsparks\",\n    \"LootPercent\": 100.0,\n    \"LootRarity\": \"Common\",\n    \"LootType\": \"None\"\n}"
+
     ],
-    "NumItems": 1,
+    "NumItems": 4,
     "ShadyModel": "",
     "ShadyScaleX": 1.0,
     "ShadyScaleY": 1.0,

@@ -8,9 +8,10 @@
     "LootItemTable": [
         "{\n    \"LootCard\": \"yoggercleaver\",\n    \"LootPercent\": 100.0,\n    \"LootRarity\": \"Rare\",\n    \"LootType\": \"None\"\n}",
         "{\n    \"LootCard\": \"wolfskincloack\",\n    \"LootPercent\": 100.0,\n    \"LootRarity\": \"Common\",\n    \"LootType\": \"None\"\n}",
-        "{\n    \"LootCard\": \"brigandarmor\",\n    \"LootPercent\": 40.0,\n    \"LootRarity\": \"Common\",\n    \"LootType\": \"None\"\n}",
-        "{\n    \"LootCard\": \"\",\n    \"LootPercent\": 100.0,\n    \"LootRarity\": \"Uncommon\",\n    \"LootType\": \"Armor\"\n}",
-        "{\n    \"LootCard\": \"\",\n    \"LootPercent\": 100.0,\n    \"LootRarity\": \"Uncommon\",\n    \"LootType\": \"None\"\n}"
+        "{\n    \"LootCard\": \"javelectricarmor\",\n    \"LootPercent\": 40.0,\n    \"LootRarity\": \"Common\",\n    \"LootType\": \"None\"\n}",
+        "{\n    \"LootCard\": \"javtridentprong\",\n    \"LootPercent\": 40.0,\n    \"LootRarity\": \"Common\",\n    \"LootType\": \"None\"\n}",
+        "{\n    \"LootCard\": \"javstormcaller\",\n    \"LootPercent\": 100.0,\n    \"LootRarity\": \"Uncommon\",\n    \"LootType\": \"Armor\"\n}",
+        "{\n    \"LootCard\": \"javringofpower\",\n    \"LootPercent\": 100.0,\n    \"LootRarity\": \"Uncommon\",\n    \"LootType\": \"None\"\n}"
     ],
     "NumItems": 8,
     "ShadyModel": "",

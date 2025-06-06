@@ -10,6 +10,7 @@
         "{\n    \"LootCard\": \"dwarvenhelmet\",\n    \"LootPercent\": 100.0,\n    \"LootRarity\": \"Common\",\n    \"LootType\": \"None\"\n}",
         "{\n    \"LootCard\": \"blunderbluss\",\n    \"LootPercent\": 100.0,\n    \"LootRarity\": \"Common\",\n    \"LootType\": \"None\"\n}",
         "{\n    \"LootCard\": \"machineoil\",\n    \"LootPercent\": 100.0,\n    \"LootRarity\": \"Epic\",\n    \"LootType\": \"Weapon\"\n}",
+        "{\n    \"LootCard\": \"javrodsfromgod\",\n    \"LootPercent\": 100.0,\n    \"LootRarity\": \"Epic\",\n    \"LootType\": \"Weapon\"\n}",
         "{\n    \"LootCard\": \"\",\n    \"LootPercent\": 70.0,\n    \"LootRarity\": \"Rare\",\n    \"LootType\": \"Accesory\"\n}"
     ],
     "NumItems": 8,

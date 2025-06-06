@@ -67,8 +67,8 @@ namespace StormJavelin
             EnableMod = Config.Bind(new ConfigDefinition("StormJavelin", "EnableMod"), true, new ConfigDescription("Enables the mod. If false, the mod will not work then next time you load the game."));
             EnableDebugging = Config.Bind(new ConfigDefinition("StormJavelin", "EnableDebugging"), true, new ConfigDescription("Enables the debugging"));
             EnableRandomJavelins = Config.Bind(new ConfigDefinition("StormJavelin", "Random Javelins"), true, new ConfigDescription("Storm Javelin is now a card reward for all."));
-            ChangeAllNames = Config.Bind(new ConfigDefinition("StormJavelin", "ChangeAllNames"), true, new ConfigDescription("Makes it so that all cards are named Storm Javelin. Restart the game upon changing this."));
             EnableBonusJavelins = Config.Bind(new ConfigDefinition("StormJavelin", "Bonus Javelins"), true, new ConfigDescription("Chace to shuffle Javelins into your deck each turn."));
+            ChangeAllNames = Config.Bind(new ConfigDefinition("StormJavelin", "ChangeAllNames"), false, new ConfigDescription("Makes it so that all cards are named Storm Javelin. Restart the game upon changing this."));
 
 
             // DevMode = Config.Bind(new ConfigDefinition("StormJavelin", "DevMode"), false, new ConfigDescription("Enables all of the things for testing."));

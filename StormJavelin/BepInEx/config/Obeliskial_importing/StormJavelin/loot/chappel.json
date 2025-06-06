@@ -6,12 +6,12 @@
     "GoldQuantity": 50,
     "ID": "chappel",
     "LootItemTable": [
-        "{\n    \"LootCard\": \"vsguitarpick\",\n    \"LootPercent\": 70.0,\n    \"LootRarity\": \"Common\",\n    \"LootType\": \"None\"\n}",
-        "{\n    \"LootCard\": \"vsvitalring\",\n    \"LootPercent\": 70.0,\n    \"LootRarity\": \"Common\",\n    \"LootType\": \"None\"\n}",
+        "{\n    \"LootCard\": \"javskyshield\",\n    \"LootPercent\": 70.0,\n    \"LootRarity\": \"Common\",\n    \"LootType\": \"None\"\n}",
+        "{\n    \"LootCard\": \"javringofpower\",\n    \"LootPercent\": 70.0,\n    \"LootRarity\": \"Common\",\n    \"LootType\": \"None\"\n}",
         "{\n    \"LootCard\": \"healthpotion\",\n    \"LootPercent\": 50.0,\n    \"LootRarity\": \"Uncommon\",\n    \"LootType\": \"None\"\n}",
         "{\n    \"LootCard\": \"sacredtablet\",\n    \"LootPercent\": 50.0,\n    \"LootRarity\": \"Uncommon\",\n    \"LootType\": \"None\"\n}",
         "{\n    \"LootCard\": \"\",\n    \"LootPercent\": 100.0,\n    \"LootRarity\": \"Common\",\n    \"LootType\": \"Jewelry\"\n}",
-        "{\n    \"LootCard\": \"gihlrunestone\",\n    \"LootPercent\": 70.0,\n    \"LootRarity\": \"Common\",\n    \"LootType\": \"None\"\n}"
+        "{\n    \"LootCard\": \"javelectricarmor\",\n    \"LootPercent\": 70.0,\n    \"LootRarity\": \"Common\",\n    \"LootType\": \"None\"\n}"
     ],
     "NumItems": 6,
     "ShadyModel": "",

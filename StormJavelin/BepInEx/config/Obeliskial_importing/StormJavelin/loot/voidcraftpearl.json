@@ -1,15 +1,16 @@
 {
-    "DefaultPercentEpic": 0.0,
-    "DefaultPercentMythic": 0.0,
-    "DefaultPercentRare": 0.0,
+    "DefaultPercentEpic": 80.0,
+    "DefaultPercentMythic": 10.0,
+    "DefaultPercentRare": 10.0,
     "DefaultPercentUncommon": 0.0,
     "GoldQuantity": 0,
     "ID": "voidcraftpearl",
     "LootItemTable": [
         "{\n    \"LootCard\": \"platinumring\",\n    \"LootPercent\": 100.0,\n    \"LootRarity\": \"Common\",\n    \"LootType\": \"None\"\n}",
+        "{\n    \"LootCard\": \"javjavelinking\",\n    \"LootPercent\": 100.0,\n    \"LootRarity\": \"Common\",\n    \"LootType\": \"None\"\n}",
         "{\n    \"LootCard\": \"pearlbelt\",\n    \"LootPercent\": 100.0,\n    \"LootRarity\": \"Common\",\n    \"LootType\": \"None\"\n}"
     ],
-    "NumItems": 2,
+    "NumItems": 4,
     "ShadyModel": "",
     "ShadyScaleX": 1.0,
     "ShadyScaleY": 1.0,

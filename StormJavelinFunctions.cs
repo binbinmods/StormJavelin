@@ -99,26 +99,25 @@ namespace StormJavelin
 
         public static int GetStormJavelinCount(Character character)
         {
-            if (!IsLivingHero(character))
+            if (!IsLivingHero(character) || MatchManager.Instance == null)
             {
+                LogError("GetStormJavelinCount called with invalid character or MatchManager not initialized.");
                 return 0;
             }
             int count = 0;
             int charInd = character.HeroIndex;
             List<string> cards = MatchManager.Instance.GetHeroDeck(charInd);
-            foreach (string card in cards)
-            {
-                if (card.StartsWith("stormjavelin"))
-                {
-                    count++;
-                }
-            }
+            count = cards?.Count(c => c.StartsWith("stormjavelin") || c.StartsWith("javthunderjavelin")) ?? 0;
+            // foreach (string card in cards)
+            // {
+            //     if (card.StartsWith("stormjavelin") || card.StartsWith("javthunderjavelin"))
+            //     {
+            //         count++;
+            //     }
+            // }
             return count;
 
         }
-
-
-
 
     }
 }

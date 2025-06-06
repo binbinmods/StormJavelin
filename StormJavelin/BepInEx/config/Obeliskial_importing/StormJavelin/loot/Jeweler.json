@@ -8,8 +8,8 @@
     "LootItemTable": [
         "{\n    \"LootCard\": \"\",\n    \"LootPercent\": 50.0,\n    \"LootRarity\": \"Rare\",\n    \"LootType\": \"Jewelry\"\n}",
         "{\n    \"LootCard\": \"\",\n    \"LootPercent\": 100.0,\n    \"LootRarity\": \"Uncommon\",\n    \"LootType\": \"Jewelry\"\n}",
-        "{\n    \"LootCard\": \"vsguitarpick\",\n    \"LootPercent\": 100.0,\n    \"LootRarity\": \"Uncommon\",\n    \"LootType\": \"Jewelry\"\n}",
-        "{\n    \"LootCard\": \"vsgracefulring\",\n    \"LootPercent\": 100.0,\n    \"LootRarity\": \"Uncommon\",\n    \"LootType\": \"Jewelry\"\n}",
+        "{\n    \"LootCard\": \"javstormnecklace\",\n    \"LootPercent\": 100.0,\n    \"LootRarity\": \"Uncommon\",\n    \"LootType\": \"Jewelry\"\n}",
+        "{\n    \"LootCard\": \"javringofpower\",\n    \"LootPercent\": 100.0,\n    \"LootRarity\": \"Uncommon\",\n    \"LootType\": \"Jewelry\"\n}",
         "{\n    \"LootCard\": \"\",\n    \"LootPercent\": 100.0,\n    \"LootRarity\": \"Common\",\n    \"LootType\": \"Jewelry\"\n}",
         "{\n    \"LootCard\": \"\",\n    \"LootPercent\": 100.0,\n    \"LootRarity\": \"Common\",\n    \"LootType\": \"Jewelry\"\n}",
         "{\n    \"LootCard\": \"\",\n    \"LootPercent\": 100.0,\n    \"LootRarity\": \"Common\",\n    \"LootType\": \"Jewelry\"\n}",

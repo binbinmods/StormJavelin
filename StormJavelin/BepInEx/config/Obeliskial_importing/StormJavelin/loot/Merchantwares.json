@@ -6,9 +6,9 @@
     "GoldQuantity": 50,
     "ID": "Merchantwares",
     "LootItemTable": [
-        "{\n    \"LootCard\": \"\",\n    \"LootPercent\": 55.0,\n    \"LootRarity\": \"Rare\",\n    \"LootType\": \"Armor\"\n}",
+        "{\n    \"LootCard\": \"javnumbingspear2\",\n    \"LootPercent\": 60.0,\n    \"LootRarity\": \"Rare\",\n    \"LootType\": \"Armor\"\n}",
         "{\n    \"LootCard\": \"\",\n    \"LootPercent\": 80.0,\n    \"LootRarity\": \"Rare\",\n    \"LootType\": \"Jewelry\"\n}",
-        "{\n    \"LootCard\": \"\",\n    \"LootPercent\": 55.0,\n    \"LootRarity\": \"Rare\",\n    \"LootType\": \"Accesory\"\n}"
+        "{\n    \"LootCard\": \"javlimitedbladeworks\",\n    \"LootPercent\": 100.0,\n    \"LootRarity\": \"Rare\",\n    \"LootType\": \"Accesory\"\n}"
     ],
     "NumItems": 6,
     "ShadyModel": "pyromancer",

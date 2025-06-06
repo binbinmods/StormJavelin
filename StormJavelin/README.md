@@ -14,6 +14,7 @@ This has not been tested in multiplayer yet, so let me know if there are any iss
 | EnableDebugging      |  true   | Enables debugging for if errors occur. Please enable this before submitting a LogOutput.log |
 | EnableRandomJavelins |  true   | Gives you Storm Javelins as card rewards.                                                   |
 | EnableBonusJavelins  |  true   | Randomly shuffles Storm Javelins into your deck.                                            |
+| ChangeAllNames       |  false  | Makes the name of all unupgraded cards and items into Storm Javelin. For extra fun.         |
 
 ## Installation (manual)
 

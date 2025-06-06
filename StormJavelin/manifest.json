@@ -2,7 +2,7 @@
   "name": "Storm_Javelin_The_Mod",
   "version_number": "0.1.0",
   "website_url": "https://github.com/binbinmods/StormJavelin",
-  "description": "A fun mod, makes Storm Javelin more prominant, more synergistic, and potentially better.",
+  "description": "Reworks Storm Javelin and adds significant new Storm Javelin based synergies. May or may not be OP.",
   "dependencies": [
     "meds-Obeliskial_Content-1.5.5",
     "meds-Obeliskial_Essentials-1.4.8"

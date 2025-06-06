@@ -1,14 +1,15 @@
 {
-    "DefaultPercentEpic": 0.0,
+    "DefaultPercentEpic": 10.0,
     "DefaultPercentMythic": 0.0,
-    "DefaultPercentRare": 0.0,
-    "DefaultPercentUncommon": 0.0,
+    "DefaultPercentRare": 50.0,
+    "DefaultPercentUncommon": 20.0,
     "GoldQuantity": 0,
     "ID": "bloblightning",
     "LootItemTable": [
-        "{\n    \"LootCard\": \"electricblobpet\",\n    \"LootPercent\": 100.0,\n    \"LootRarity\": \"Common\",\n    \"LootType\": \"None\"\n}"
+        "{\n    \"LootCard\": \"electricblobpet\",\n    \"LootPercent\": 100.0,\n    \"LootRarity\": \"Common\",\n    \"LootType\": \"None\"\n}",
+        "{\n    \"LootCard\": \"javnumbingspear2\",\n    \"LootPercent\": 100.0,\n    \"LootRarity\": \"Common\",\n    \"LootType\": \"None\"\n}"
     ],
-    "NumItems": 1,
+    "NumItems": 4,
     "ShadyModel": "",
     "ShadyScaleX": 1.0,
     "ShadyScaleY": 1.0,
