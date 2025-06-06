@@ -77,7 +77,7 @@ namespace StormJavelin
 
         public static string GetStormJavelinUpgraded(string seed = "", int randInt = 0)
         {
-            string cardName = "vitalizingJavelinspecial";
+            string cardName = "stormjavelin";
             UnityEngine.Random.InitState(seed.GetDeterministicHashCode());
 
             randInt = randInt == 0 ? UnityEngine.Random.Range(0, 100) : randInt;

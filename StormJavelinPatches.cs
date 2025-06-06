@@ -44,9 +44,9 @@ namespace StormJavelin
             {
                 return;
             }
-            int serenadeChance = 10;
-            bool addSerenade = EnableBonusJavelins.Value && MatchManager.Instance.GetRandomIntRange(0, 100) < serenadeChance;
-            if (addSerenade && theEvent == Enums.EventActivation.BeginRound)
+            int javChance = 10;
+            bool addJav = EnableBonusJavelins.Value && MatchManager.Instance.GetRandomIntRange(0, 100) < javChance;
+            if (addJav && theEvent == Enums.EventActivation.BeginRound)
             {
                 Character hero = __instance;
                 if (!IsLivingHero(hero)
@@ -64,11 +64,6 @@ namespace StormJavelin
                 MatchManager.Instance.GetCardData(cardInDictionary1);
                 MatchManager.Instance.GenerateNewCard(1, cardInDictionary1, false, Enums.CardPlace.RandomDeck, heroIndex: index);
             }
-            if (theEvent == Enums.EventActivation.BeginTurnAboutToDealCards)
-            {
-                Character hero = __instance;
-                hero?.SetAura(hero, GetAuraCurseData("stanzai"), 1, useCharacterMods: false);
-            }
 
 
             if (theEvent == Enums.EventActivation.BeginCombat)
@@ -80,7 +75,7 @@ namespace StormJavelin
                 {
                     return;
                 }
-                if (addSerenade)
+                if (addJav)
                 {
                     int index = hero.HeroIndex;
                     // string seed = AtOManager.Instance.currentMapNode + AtOManager.Instance.GetGameId();
@@ -279,11 +274,11 @@ namespace StormJavelin
                 return;
             }
             LogDebug($"GetCardByRarityPostfix {rarity} {__result}");
-            int serenadeRewardChance = 5;
+            int javRewardChance = 5;
             string seed = AtOManager.Instance?.currentMapNode ?? "" + AtOManager.Instance.GetGameId() + __result;
             UnityEngine.Random.InitState(seed.GetDeterministicHashCode());
-            bool addSerenadeReward = UnityEngine.Random.Range(0, 100) < serenadeRewardChance;
-            if (!addSerenadeReward)
+            bool addJavReward = UnityEngine.Random.Range(0, 100) < javRewardChance;
+            if (!addJavReward)
             {
                 return;
             }
